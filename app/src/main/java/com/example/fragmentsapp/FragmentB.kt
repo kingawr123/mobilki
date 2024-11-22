@@ -26,6 +26,13 @@ class FragmentB : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("Fragment B Test", "OnViewCreated()")
+
+        // Set up button click listener to navigate to Fragment A
+        binding.buttonNavigateToA.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FragmentA())
+                .commit()
+        }
 }
 
     override fun onDestroyView() {
