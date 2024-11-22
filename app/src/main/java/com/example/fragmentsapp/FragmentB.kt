@@ -19,6 +19,8 @@ class FragmentB : Fragment() {
         return binding.root
     }
 
+//    TODO: Create onViewCreated() function to add navigation to fragment A
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null // Avoid memory leaks

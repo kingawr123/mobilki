@@ -1,6 +1,8 @@
 package com.example.fragmentsapp
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,13 +18,27 @@ class FragmentA : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Initialize binding
+        Log.d("Fragment Test", "OnCreateView()")
         _binding = FragmentABinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        Log.d("Fragment Test", "OnDestroyView()")
+
         // Nullify binding to avoid memory leaks
         _binding = null
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d("Fragment Test", "OnAttach()")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d("Fragment Test", "OnDetach()")
+
     }
 }
