@@ -23,9 +23,15 @@ class FragmentA : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.d("Fragment A Test", "OnViewCreated()")
+
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d("Fragment Test", "OnDestroyView()")
+        Log.d("Fragment A Test", "OnDestroyView()")
 
         // Nullify binding to avoid memory leaks
         _binding = null
@@ -33,12 +39,12 @@ class FragmentA : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        Log.d("Fragment Test", "OnAttach()")
+        Log.d("Fragment A Test", "OnAttach()")
     }
 
     override fun onDetach() {
         super.onDetach()
-        Log.d("Fragment Test", "OnDetach()")
+        Log.d("Fragment A Test", "OnDetach()")
 
     }
 }
